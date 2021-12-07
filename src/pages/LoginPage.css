@@ -1,0 +1,195 @@
+/* config.css */
+
+:root {
+    --baseColor: #606468;
+}
+
+/* helpers/align.css */
+
+.align {
+    display: grid;
+    place-items: center;
+}
+
+.formLogin {
+    inline-size: 90%;
+    margin-inline: auto;
+    max-inline-size: 25rem;
+}
+
+/* helpers/hidden.css */
+
+.formLogin .hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/* helpers/icon.css */
+
+:root {
+    --iconFill: var(--baseColor);
+}
+
+.formLogin .icons {
+    display: none;
+}
+
+.formLogin .icon {
+    block-size: 1em;
+    display: inline-block;
+    fill: var(--iconFill);
+    inline-size: 1em;
+    vertical-align: middle;
+}
+
+/* layout/base.css */
+
+:root {
+    --htmlFontSize: 100%;
+
+    --bodyBackgroundColor: #67baf5;
+    --bodyColor: var(--baseColor);
+    --bodyFontFamily: "Open Sans";
+    --bodyFontFamilyFallback: sans-serif;
+    --bodyFontSize: 0.875rem;
+    --bodyFontWeight: 400;
+    --bodyLineHeight: 1.5;
+}
+
+.align {
+    background-color: #fafafb;
+    height: 100vh;
+}
+/* modules/anchor.css */
+
+.formLogin {
+    --anchorColor: rgb(0, 26, 255);
+}
+
+.formLogin a {
+    color: var(--anchorColor);
+    outline: 0;
+    text-decoration: none;
+}
+
+.formLogin a:focus,
+.formLogin a:hover {
+    text-decoration: underline;
+}
+
+/* modules/form.css */
+
+.formLogin {
+    --formGap: 0.875rem;
+}
+
+.formLogin input {
+    background-image: none;
+    border: 0;
+    color: #000;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.formLogin input[type="submit"] {
+    cursor: pointer;
+}
+
+.formLogin .form {
+    display: grid;
+    gap: var(--formGap);
+}
+
+.formLogin .form input[type="password"],
+.formLogin .form input[type="text"],
+.formLogin .form input[type="submit"] {
+    inline-size: 100%;
+}
+
+.formLogin .form__field {
+    display: flex;
+}
+
+.formLogin .form__input {
+    flex: 1;
+}
+
+/* modules/login.css */
+
+:root {
+    --loginBorderRadus: 0.25rem;
+    --loginColor: #eee;
+
+    --loginInputBackgroundColor: #ffffff;
+    --loginInputHoverBackgroundColor: #ffffff;
+
+    --loginLabelBackgroundColor: #d8dde2;
+
+    --loginSubmitBackgroundColor: #349eff;
+    --loginSubmitColor: #eee;
+    --loginSubmitHoverBackgroundColor: #349eff;
+}
+
+.formLogin .login {
+    color: var(--loginColor);
+}
+
+.formLogin .login label,
+.formLogin .login input[type="text"],
+.formLogin .login input[type="password"],
+.formLogin .login input[type="submit"] {
+    border-radius: var(--loginBorderRadus);
+    padding: 1rem;
+}
+
+.formLogin .login label {
+    background-color: var(--loginLabelBackgroundColor);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding-inline: 1.25rem;
+}
+
+.formLogin .login input[type="password"],
+.formLogin .login input[type="text"] {
+    background-color: var(--loginInputBackgroundColor);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.formLogin .login input[type="password"]:focus,
+.formLogin .login input[type="password"]:hover,
+.formLogin .login input[type="text"]:focus,
+.formLogin .login input[type="text"]:hover {
+    background-color: var(--loginInputHoverBackgroundColor);
+}
+
+.formLogin .login input[type="submit"] {
+    background-color: var(--loginSubmitBackgroundColor);
+    color: var(--loginSubmitColor);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.formLogin .login input[type="submit"]:focus,
+.formLogin .login input[type="submit"]:hover {
+    background-color: var(--loginSubmitHoverBackgroundColor);
+}
+
+/* modules/text.css */
+
+.formLogin p {
+    margin-block: 1.5rem;
+}
+
+.formLogin .text--center {
+    text-align: center;
+}

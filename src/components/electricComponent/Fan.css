@@ -1,0 +1,50 @@
+#fan{
+    font-size:13px;
+    position: relative;
+}
+.blades {
+    height: 6em;
+    width: 6em;
+    /* position: absolute; */
+    top: 1em;
+    left: 1em;
+    z-index: 9;
+    animation: blades 3000ms infinite linear;
+}
+
+.b1,
+.b2,
+.b3 {
+    height: 3.25em;
+    width: 3.25em;
+    position: absolute;
+    border-radius: 0 50% 100%;
+    /* box-shadow:0 0 10px rgba(0,0,0,1); */
+    background: rgba(44, 42, 42,0.8);
+}
+.b1 {
+    top: 3.5em;
+    left: 1.375em;
+    transform: rotate(45deg);
+}
+
+.b2 {
+    top: 0.25em;
+    left: -0.5em;
+    transform: rotate(165deg);
+}
+
+.b3 {
+    top: 0.25em;
+    left: 3.25em;
+    transform: rotate(285deg);
+}
+@keyframes blades {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
