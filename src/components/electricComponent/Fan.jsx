@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import './Fan.css'
 export default function Fan() {
     const fan = useSelector((state) => state.ElectricStatusReducer.fan);
-    // console.log("fan: ", fan);
     return (
         <div id="fan">
             <div className="blades"  style={{ animation:`${fan !== 0 ? "" : "unset"}` }}>

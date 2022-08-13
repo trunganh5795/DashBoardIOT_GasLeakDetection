@@ -13,7 +13,7 @@ export const DataTableReducers = (state = defaultState, action) => {
             state.dataHistoryLoader = false;
             state.dataHistory = state.dataHistory.concat(action.data);
             state.dataHistory = [...state.dataHistory]
-            console.log(state.dataHistory);
+            
             return { ...state }
         case 'PHONE_LIST':
             state.phoneList = [...action.data]

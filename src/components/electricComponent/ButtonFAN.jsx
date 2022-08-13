@@ -6,18 +6,13 @@ import "./button.css"
 export default function ButtonFAN(props) {
     return (
         <div style={{ position: 'absolute', right: '-10px' }}>
-            {console.log(getSettingsLocalStorage('fanmode'))}
             <div className="button r" style={{ margin: 'unset', top: 0 }} id="button-1">
-                {console.log("FAN toggle: ", props.fan)}
                 <input type="checkbox" className="checkbox" checked={props.fan === 0 ? true : false} disabled={getSettingsLocalStorage('fanmode') === 'auto' ? true : false}
                     onChange={(e) => {
                         if (e.target.checked) {
-                            console.log("checked");
                             sendData(10, FEED_DRV_NAME, FEED_DRV, 0, ACTIVE_KEY, USERNAME);
-                        } else {
-                            console.log("unchecked");
-                            let fanSpeed = getSettingsLocalStorage('fanspeed');
-                            console.log(fanSpeed);
+                        } else {                 
+                            let fanSpeed = getSettingsLocalStorage('fanspeed');                        
                             sendData(10, FEED_DRV_NAME, FEED_DRV, fanSpeed, ACTIVE_KEY, USERNAME);
                         }
                     }}

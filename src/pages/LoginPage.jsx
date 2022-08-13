@@ -19,8 +19,7 @@ export default function LoginPage() {
     const [state, dispatch] = useReducer(reducer, defaultState)
     const dispatchStore = useDispatch();
     return (
-        <div className="align">
-            {console.log("login Re-render")}
+        <div className="align">      
             <div className="formLogin">
                 <div className="d-flex justify-content-center pb-5">
                     <img width="200px" src={logo_login} alt="logo" />

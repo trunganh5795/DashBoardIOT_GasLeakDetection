@@ -7,12 +7,14 @@ import { Link } from 'react-router-dom'
 import Dropdown from '../dropdown/Dropdown'
 
 
-import user_image from '../../assets/images/hansohee.png'
 
-import user_menu from '../../assets/JsonData/user_menus.json'
 import { logout } from '../../redux/actions/UserAction'
-import { history } from '../../config/config'
 
+const user_menu =[
+    {
+        content:"Log out"
+    }
+]
 const renderUserMenu = (item, index) => (
     <div className="notification-item" key={index}>
         <i className={item.icon}></i>
@@ -29,12 +31,11 @@ const Topnav = () => {
             <div className="topnav__right">
                 <div className="topnav__right-item">
                     {/* dropdown here */}
-                    {console.log("Topnav")}
                     <Dropdown
                         contentData={user_menu}
                         renderItems={(item, index) => renderUserMenu(item, index)}
                     />
-                </div>``
+                </div>
             </div>
         </div>
     )

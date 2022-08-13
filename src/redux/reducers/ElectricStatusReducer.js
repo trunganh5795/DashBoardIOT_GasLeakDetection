@@ -22,11 +22,11 @@ export const ElectricStatusReducer = (state = StatusValue, action) => {
             return {...state}
         case "SERVER_LED_BUZZER_CONECTION":
             state.serverLedBuzzerConection = true;
-            console.log("SERVER_LED_BUZZER_CONECTION: ",state.serverLedBuzzerConection);
+            
             return {...state}
         case "SERVER_GAS_FAN_CONECTION":
             state.serverFanGasConection = true;
-            console.log(state.serverFanGasConection);
+            
             return {...state}
         default:
             return state

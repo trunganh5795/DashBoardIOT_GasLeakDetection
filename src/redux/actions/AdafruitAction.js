@@ -42,38 +42,37 @@ export const getLatestValue = async (dispatch) => {
         })
         return value
 
-    }))
-    latestValue.forEach((item) => {
-        if (item[FEED_BUZZER] !== undefined) {
-            console.log("item[FEED_BUZZER]: ", item[FEED_BUZZER]);
-            dispatch({
-                type: 'BUZZER',
-                data: item[FEED_BUZZER]
-            })
-        } else if (item[FEED_GAS] !== undefined) {
-            console.log("item[FEED_GAS]: ", item[FEED_GAS]);
-            dispatch({
-                type: 'GAS_SENSOR',
-                data: item[FEED_GAS],
-            })
-        } else if (item[FEED_DRV] !== undefined) {
-            console.log("item[FEED_DRV]: ", item[FEED_DRV]);
-            dispatch({
-                type: "FAN",
-                data: item[FEED_DRV]
-            })
-        } else if (item[FEED_LED] !== undefined) {
-            console.log("item[FEED_LED]: ", item[FEED_LED]);
-            dispatch({
-                type: "LED",
-                data: item[FEED_LED]
-            })
-        }
-    })
+    })).catch(()=>{})
+    if(latestValue){
+        latestValue.forEach((item) => {
+            if (item[FEED_BUZZER] !== undefined) {
+                dispatch({
+                    type: 'BUZZER',
+                    data: item[FEED_BUZZER]
+                })
+            } else if (item[FEED_GAS] !== undefined) {
+                dispatch({
+                    type: 'GAS_SENSOR',
+                    data: item[FEED_GAS],
+                })
+            } else if (item[FEED_DRV] !== undefined) {
+                
+                dispatch({
+                    type: "FAN",
+                    data: item[FEED_DRV]
+                })
+            } else if (item[FEED_LED] !== undefined) {
+                
+                dispatch({
+                    type: "LED",
+                    data: item[FEED_LED]
+                })
+            }
+        })
+        
+        return latestValue;
+    }
 
-
-    console.log("latestValue: ", latestValue)
-    return latestValue;
 }
 export const parseValue = (message) => {
     let valueString = JSON.parse(message).data.value

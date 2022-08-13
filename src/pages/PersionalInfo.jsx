@@ -8,7 +8,6 @@ const PersonalInfo = () => {
     const [userInfo, setUserinfo] = useState({ name: '', email: '', address: '', phone: '', img: '' })
     const [imgPreview, setImgPreview] = useState('');
     useEffect(async () => {
-        console.log("here")
         let userInfo = await getInfo();
         setUserinfo(userInfo)
     }, []);
@@ -72,7 +71,7 @@ const PersonalInfo = () => {
                                         />
                                     </div>
                                     <div className="row mt-5">
-                                        <div className="col-4">
+                                        <div className="col-6">
                                             <button type="submit" className="btn btn-primary btn-block"
                                             >Save Changes</button>
                                         </div>

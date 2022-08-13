@@ -32,12 +32,10 @@ const Dropdown = props => {
                 {
                     props.badge ? <span className='dropdown__toggle-badge'>{props.badge}</span> : ''
                 }
-                {/* {
-                    props.customToggle ? props.customToggle() : ''
-                } */}
+
                 <div className="topnav__right-user">
                     <div className="topnav__right-user__image">
-                        <img src="" alt="img" />
+                        <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="img" />
                     </div>
                     <div className="topnav__right-user__name">
                         {localStorage.getItem('name')}

@@ -6,7 +6,6 @@ export default function GasSensorStatus() {
     
     return (
         <div className="hover14 column-shine" style={{ display: `${gasSensor < 1 ? "block" : "none"}` }}>
-            {/* {console.log("Gas Safe: ", gasSensor)} */}
             <figure><img height="60px" src="./img/safe.png" /></figure>
         </div>
     )

@@ -18,17 +18,15 @@ import { parseValue } from '../../redux/actions/AdafruitAction'
 import { sendData } from '../../actions/userAction'
 import { getSettingsLocalStorage } from '../../redux/actions/Helper'
 import { sendSMS } from '../../redux/actions/UserAction'
-console.log("Layout:", ACTIVE_KEY);
 
-// client.on('connect', () => {console.log("connected to server 1");})
+// client.on('connect', () => {
 const Layout = (props) => {
-    const [client, setClient] = useState({ client: '', client2: '' })
+
     const themeReducer = useSelector(state => state.ThemeReducer)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log("Useffect")
         //CSE_BBC
         let client = mqtt.connect("mqtt://io.adafruit.com", {
             username: USERNAME,
@@ -40,7 +38,7 @@ const Layout = (props) => {
             password: ACTIVE_KEY2,
         });
         client.on('connect', () => {
-            console.log("connected Client1");
+            
             client.subscribe(`CSE_BBC/feeds/${FEED_BUZZER}/json`);
             client.subscribe(`CSE_BBC/feeds/${FEED_LED}/json`);
             client.subscribe(`CSE_BBC/feeds/${FEED_DRV}/json`);
@@ -50,7 +48,7 @@ const Layout = (props) => {
             })
         })
         client2.on('connect', () => {
-            console.log("connected Client2");
+            
             client2.subscribe(`CSE_BBC1/feeds/${FEED_GAS}/json`);
             // client2.subscribe(`nonameex1/feeds/${FEED_DRV}/json`);
             dispatch({
@@ -62,7 +60,7 @@ const Layout = (props) => {
         // Message on SERVER 1 => CSE_BBC
         client.on('message', (topic, message) => {
             let value = parseValue(message);
-            console.log("Server1 Mess: ", value)
+            
             if (JSON.parse(message).key === FEED_BUZZER) {
                 dispatch({
                     type: 'BUZZER',
@@ -83,8 +81,6 @@ const Layout = (props) => {
         // Message on SERVER 2 => CSE_BBC1
         client2.on('message', (topic, message) => {
             let value = parseValue(message);
-            console.log(JSON.parse(message).data)
-            console.log("Gas Value: ",value)
             if (JSON.parse(message).key === FEED_GAS) {
                 
                 if (value > 0) {
@@ -121,10 +117,8 @@ const Layout = (props) => {
         })
 
 
-        console.log(client2);
-        setClient({ client, client2 })
         return () => {
-            console.log("Close connection")
+            
             client.end();
             client2.end();
         }
@@ -136,8 +130,6 @@ const Layout = (props) => {
             <Route render={(props) => (
                 <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
                     <Sidebar {...props} />
-                    {console.log(props)}
-
                 </div>
             )} />
             <div className="layout__content">

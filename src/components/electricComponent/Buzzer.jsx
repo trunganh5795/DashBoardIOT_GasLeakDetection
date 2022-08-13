@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import './Buzzer.css'
 export default function Buzzer() {
     const buzzer = useSelector((state) => state.ElectricStatusReducer.buzzer)
-    console.log(buzzer);
     return (
         <div style={{position: 'relative'}}>
             <div className="frame" >

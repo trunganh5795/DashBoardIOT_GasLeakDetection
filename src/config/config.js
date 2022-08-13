@@ -1,7 +1,27 @@
 import { createBrowserHistory } from 'history'
 export const history = createBrowserHistory();
-
-
+export const SIDEBAR_ITEMS = [
+    {
+        display_name: "Dashboard",
+        route: "/",
+        icon: "fa-solid fa-gauge-low"
+    },
+    {
+        display_name: "Customers",
+        route: "/customers",
+        icon: "fa-solid fa-user-plus"
+    },
+    {
+        display_name: "Settings",
+        route: "/settings",
+        icon: "fa-solid fa-gear"
+    },
+    {
+        display_name: "Document",
+        route: "/document",
+        icon: "fa-solid fa-book"
+    }
+]
 //CSE_BBC
 // export const USERNAME = 'nonameex2'; //Add username Server 1
 export const USERNAME = ''; //Add username Server 1

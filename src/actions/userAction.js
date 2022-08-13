@@ -41,7 +41,6 @@ export const changeSetting = async (fanmode, fanspeed, buzzervalue) => {
             }
 
         })
-        console.log(fanmode, fanspeed);
         localStorage.setItem('settings', JSON.stringify(settings));
     } catch (error) {
 

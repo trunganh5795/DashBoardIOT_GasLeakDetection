@@ -19,24 +19,35 @@ const historyTableHeader = {
         'status',
         'time'
     ],
- 
+
 }
 const renderLeaksHistory = (item, index) => (
     <tr key={index}>
+        {/* Please note:  Properties depend on your database */}
         <td>{item.feed_key}</td>
         <td>{JSON.parse(item.value).data}</td>
         <td style={{ textTransform: "unset" }}>{moment(item.created_at).format('MMM Do YYYY, h:mm:ss a')}</td>
     </tr>
 )
+const renderCustomerHead = (item, index) => (
+    <tr key={index}>
+        {/*Please note:  Properties depend on your database */}
+        <td>{item.id}</td>
+        <td>{item.name}</td>
+        <td>{item.phone}</td>
+        <td>{item.addedon}</td>
+        <td>{item.status}</td>
+    </tr>
+)
+
 
 const Dashboard = (props) => {
     useEffect(() => {
         if (!checkLogin()) {
             history.push('/login')
         }
-
     }, [])
-    const displayForm = useRef(null);
+
     return (
         <div>
             <h2 className="page-header">Dashboard</h2>
@@ -66,7 +77,7 @@ const Dashboard = (props) => {
                         <div className="card__body">
                             <Table
                                 headData={historyTableHeader.head}
-                                renderHead={(item, index) => renderCusomerHead(item, index)}
+                                renderHead={(item, index) => renderCustomerHead(item, index)}
                                 renderBody={(item, index) => renderLeaksHistory(item, index)}
                                 selectData={"dataHistory"}
                             />
@@ -74,7 +85,7 @@ const Dashboard = (props) => {
                     </div>
                 </div>
                 <div className="col-8" style={{ position: 'relative' }}>
-                    <AddNewPhone/>
+                    <AddNewPhone />
                 </div>
             </div>
         </div>

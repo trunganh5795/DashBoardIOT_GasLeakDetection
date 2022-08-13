@@ -78,12 +78,10 @@ const chartOptions = {
         }
     }
 }
-
-let value = [1, 0, 1, 0, 0, 1, 0]
 export default function StepChart() {
-    // const [data, setData] = useState([]);
+   
     const { data } = useSelector((state) => state.DataChartReducer)
-    console.log(data)
+
     return (
         <Chart
             options={{

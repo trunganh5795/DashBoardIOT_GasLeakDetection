@@ -59,7 +59,7 @@ export default function AddNewPhone() {
                                 dispatch(addNewPhone({name,phone}))
                             }}
                         >Add</button>
-                        <button className="btn " type="button" style={{ width: '100px', background: '#DD3C54', color: '#fff' }}
+                        <button className="btn " type="button" style={{ width: '120px', background: '#DD3C54', color: '#fff' }}
                             onClick={() => displayForm.current.style.display = "none"}
                         >Cancel</button>
                     </div>

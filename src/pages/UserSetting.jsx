@@ -26,8 +26,8 @@ export default function UserSetting() {
         }
     }, [])
     return (
-        <div className="m-auto" style={{ maxWidth: '500px' }}>
-            {console.log("Settings:",settings)}
+        <div className="m-auto" style={{ maxWidth: '700px' }}>
+
             <form action=""
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -40,7 +40,7 @@ export default function UserSetting() {
                     </div>
                     <div id="wrapper " className="d-inline  col-5">
                         <div className="form-group d-inline" style={{ position: 'relative' }}>
-                            <input type="password" ref={serverKey1Input} onChange={(e) => { console.log(e.target.value) }} value={settings.serverkey1} className="form-control d-inline" style={{ width: '350px', position: 'relative' }} id="password" />
+                            <input type="password" ref={serverKey1Input} value={settings?.serverkey1} className="form-control d-inline" style={{ width: '350px', position: 'relative' }} id="password" />
                             <div className="formIcon"
                                 onClick={() => showPasswordToggle(serverKey1Input)}
                             >
@@ -55,7 +55,7 @@ export default function UserSetting() {
                     </div>
                     <div id="wrapper " className="d-inline  col-5">
                         <div className="form-group has-feedback d-inline" style={{ position: 'relative' }}>
-                            <input type="password" ref={serverKey2Input} onChange={(e) => { console.log(e.target.value) }} value={settings.serverkey2} className="form-control d-inline" style={{ width: '350px' }} />
+                            <input type="password" ref={serverKey2Input} value={settings?.serverkey2} className="form-control d-inline" style={{ width: '350px' }} />
                             <div className="formIcon"
                                 onClick={() => showPasswordToggle(serverKey2Input)}
                             >
@@ -69,7 +69,7 @@ export default function UserSetting() {
                         <span>FAN Mode</span>
                     </div>
                     <div className="d-inline col-5">
-                        <select className="form-select d-inline" value={settings.fanmode} aria-label="Default select example" style={{ width: '350px' }}
+                        <select className="form-select d-inline" value={settings?.fanmode} aria-label="Default select example" style={{ width: '350px' }}
                         // onChange={(e)=> setSetting({...settings,fanmode:e.target.value})}
                         onChange={(e)=>setSetting({...settings,fanmode:e.target.value})}
                         >
@@ -83,8 +83,7 @@ export default function UserSetting() {
                         <span>FAN Speed</span>
                     </div>
                     <div className="d-inline " style={{ width: '350px', paddingLeft: '15px' }}>
-                        {console.log(+settings.fanspeed)}
-                        <Slider defaultValue={+settings.fanspeed} key={settings.serverkey2}
+                        <Slider defaultValue={+settings?.fanspeed} key={settings?.serverkey2}
                             aria-label="Default"
                             valueLabelDisplay="auto"
                             sx={{ width: '350px' }}
@@ -98,8 +97,7 @@ export default function UserSetting() {
                         <span>Buzzer Value</span>
                     </div>
                     <div className="d-inline " style={{ width: '350px', paddingLeft: '15px' }}>
-                        {console.log(+settings.fanspeed)}
-                        <Slider defaultValue={+settings.buzzervalue} key={settings.serverkey1}
+                        <Slider defaultValue={+settings?.buzzervalue} key={settings?.serverkey1}
                             aria-label="Default"
                             valueLabelDisplay="auto"
                             sx={{ width: '350px' }}

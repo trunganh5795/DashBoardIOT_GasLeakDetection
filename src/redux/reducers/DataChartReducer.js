@@ -5,7 +5,7 @@ const DataChart = {
 const DataChartReducer = (state = DataChart, action) => {
     switch (action.type) {
         case "ADD_CHART_VALUE":
-            console.log("action data: ", action.data)
+            
             if (state.data.length > 50) {
                 state.data.splice(0, 40);
             }

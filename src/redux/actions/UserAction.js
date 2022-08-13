@@ -4,7 +4,6 @@ import { checkLogin } from "./Helper"
 
 export const loginFeature = ({ usr, pass }) => {
     return async (dispatch) => {
-        console.log("login")
         try {
             let result = await axios({
                 method: 'POST',
@@ -12,8 +11,7 @@ export const loginFeature = ({ usr, pass }) => {
                 data: {
                     usr, pass
                 }
-            })
-            console.log(result.data);
+            })      
             const { token, phonelist, settings, name } = result.data;
             localStorage.setItem('accessToken', token)
             localStorage.setItem('name', name)
@@ -46,7 +44,7 @@ export const updateInfo = async (data) => {
     let token = localStorage.getItem("accessToken")
     let formdata = new FormData();
     formdata.append('file', data.img)
-    console.log(data.img)
+    
     let newData = {...data}
     delete newData.img;
 
